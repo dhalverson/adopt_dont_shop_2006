@@ -31,4 +31,10 @@ describe "Shelter ID Page", type: :feature do
     expect(page).to have_content(shelter_1.state)
     expect(page).to have_content(shelter_1.zip)
   end
+
+
+
+
+
+
 end

@@ -1,0 +1,11 @@
+<h1>All Pets</h1>
+
+<% @pets.each do |pet| %>
+  <p><%= pet.image %></p>
+  <p><%= pet.name%></p>
+  <p><%= pet.age %></p>
+  <p><%= pet.sex %></p>
+  <p><%= pet.shelter_name %></p>
+<% end %>
+
+<%# <%= link_to 'New Shelter', '/shelters/new' %> %>
