@@ -20,7 +20,7 @@
   # and I am redirected to the Shelter's Show page where I see the shelter's updated info
 require "rails_helper"
 
-  describe "Shelter Update", type: :feature do
+  RSpec.describe "Shelter Update", type: :feature do
     it "I am redirected to the Shelter's Show page where I see the shelter's updated info" do
       shelter_1 = Shelter.create(name: "Dan's Dogs",
                                  address: "123 Main Street",
