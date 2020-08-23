@@ -9,7 +9,7 @@
 # - zip
 require "rails_helper"
 
-describe "Shelter ID Page", type: :feature do
+RSpec.describe "Shelter ID Page", type: :feature do
 
   it "I see the shelter with that id including the shelter's address" do
     shelter_1 = Shelter.create(name: "Dan's Dogs",
@@ -31,10 +31,4 @@ describe "Shelter ID Page", type: :feature do
     expect(page).to have_content(shelter_1.state)
     expect(page).to have_content(shelter_1.zip)
   end
-
-
-
-
-
-
 end
