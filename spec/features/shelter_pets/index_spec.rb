@@ -1,19 +1,18 @@
-# User Story 7, Pet Index
+# User Story 8, Shelter Pets Index
 #
 # As a visitor
-# When I visit '/pets'
-# Then I see each Pet in the system including the Pet's:
+# When I visit '/shelters/:shelter_id/pets'
+# Then I see each Pet that can be adopted from that Shelter with that shelter_id including the Pet's:
 # - image
 # - name
 # - approximate age
 # - sex
-# - name of the shelter where the pet is currently located
 
 require "rails_helper"
 
-RSpec.describe "Pets Index Page", type: :feature do
+RSpec.describe "Shelter Pets Index Page", type: :feature do
 
-  it "I see the name of each pet in the system" do
+  it "I see each Pet that can be adopted from that Shelter with that shelter_id" do
     shelter_1 = Shelter.create!({name: "Dan's Dogs",
                                address: "123 Main Street",
                                city: "Denver",
@@ -32,15 +31,16 @@ RSpec.describe "Pets Index Page", type: :feature do
                         name: "Kaiser",
                         age: 12,
                         sex: "male"})
+    pet_3 = shelter_2.pets.create!({image: "image03.jpg",
+                        name: "Lucy",
+                        age: 12,
+                        sex: "female"})
 
-    visit "/pets"
+    visit "/shelters/#{shelter_1.id}/pets"
 
     # expect(page).to have_css('img', text: "image1.jpg")
     expect(page).to have_content(pet_1.name)
     expect(page).to have_content(pet_1.age)
     expect(page).to have_content(pet_1.sex)
-
-
-    expect(page).to have_content(pet_2.name)
   end
 end
