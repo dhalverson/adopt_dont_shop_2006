@@ -5,7 +5,7 @@
 # Then I see the name of each shelter in the system
 require "rails_helper"
 
-describe "Shelter Index Page", type: :feature do
+RSpec.describe "Shelter Index Page", type: :feature do
 
   it "I see the name of each shelter in the system" do
     shelter_1 = Shelter.create(name: "Dan's Dogs",
