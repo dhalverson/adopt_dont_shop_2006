@@ -23,6 +23,5 @@ RSpec.describe "deleting a shelter" do
     click_on "Delete Shelter"
 
     # expect shelter1 to not have name
-
   end
 end

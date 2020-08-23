@@ -36,7 +36,10 @@ RSpec.describe "Shelter Pet Create", type: :feature do
     expect(page).to have_link("Create Pet")
     click_link "Create Pet"
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets/new")
+    fill_in :image, with: "image01.jpg"
     fill_in :name, with: "Larry"
+    fill_in :age, with: 100
+    fill_in :sex, with: "male"
     click_on "Create Pet"
     expect(current_path).to eq("/shelters/#{@shelter_1.id}/pets")
     expect(page).to have_content("Larry")
