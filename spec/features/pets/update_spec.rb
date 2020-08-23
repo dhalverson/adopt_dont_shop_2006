@@ -36,7 +36,7 @@ RSpec.describe "Pet Update", type: :feature do
     click_link "Update Pet"
     expect(current_path).to eq("/pets/#{pet_1.id}/edit")
     fill_in :name, with: "Hudson Updated"
-    click_on "Update Shelter"
+    click_on "Update Pet"
     expect(current_path).to eq("/pets/#{pet_1.id}")
     expect(page).to have_content("Hudson Updated")
   end
